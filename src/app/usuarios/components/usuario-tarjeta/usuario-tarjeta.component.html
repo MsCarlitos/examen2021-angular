@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{ usuario.name }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{ usuario.name }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="usuario" />
+  <mat-card-content>
+    <h3>{{ usuario.name }}</h3>
+    <p>
+      <strong>Primera Aparicion</strong>{{ usuario.name }}
+      <br />
+      <strong>Personajes</strong>{{ usuario.name }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <div fxLayout>
+      <button
+      mat-button
+      style="background-color: #ff6633"
+      [routerLink]="['/usuarios', usuario.uid]"
+    >
+      Leer mas...
+    </button>
+    <span class='spacer'></span>
+    <button
+      mat-button
+      style="background-color: #ff6633"
+      [routerLink]="['/usuarios/editar', usuario.uid]"
+    >
+      Editar
+    </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

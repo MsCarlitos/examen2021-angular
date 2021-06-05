@@ -1,0 +1,49 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push" style="background-color: #ff6633;">
+    <mat-toolbar style="background-color: #ff6633;">
+        <span>Menu</span>
+        <span class="spacer"></span>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon >menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list>
+        <a routerLink='./listado'
+            mat-list-item
+            (click)="sidenav.toggle()"
+        >
+            <mat-icon mat-list-icon>label</mat-icon>
+            <span>Listado de Usuarios</span>
+        </a>
+        <a routerLink='./agregar'
+            mat-list-item
+            (click)="sidenav.toggle()"
+        >
+        <mat-icon mat-list-icon>add</mat-icon>
+            <span>Agregar</span>
+        </a>
+        <a routerLink='./buscar'
+            mat-list-item
+            (click)="sidenav.toggle()"
+        >
+        <mat-icon mat-list-icon>search</mat-icon>
+            <span>Buscar Usuario</span>
+        </a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <mat-toolbar style="background-color: #ff6633">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <span>{{auth.email}}</span>
+    <button mat-button (click)="Logout()">
+      Logout
+    </button>
+  </mat-toolbar>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

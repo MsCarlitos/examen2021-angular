@@ -1,0 +1,32 @@
+<mat-grid-list cols="1" *ngIf="!usuario; else divUsuario">
+  <mat-grid-tile>
+    <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divUsuario>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px">
+    <div fxFlex="50">
+      <h1>
+        {{ usuario.name }} <small>-{{ usuario.name }}</small>
+      </h1>
+      <mat-divider></mat-divider>
+      <br />
+      <!-- <img [src]="usuario" /> -->
+    </div>
+    <div fxFlex="50">
+      <h1>{{ usuario.name }}</h1>
+      <mat-divider></mat-divider>
+      <mat-list>
+        <mat-list-item> {{ usuario.name }}</mat-list-item>
+        <mat-list-item> {{ usuario.name }}</mat-list-item>
+        <mat-list-item> {{ usuario.name }}</mat-list-item>
+        <mat-list-item> {{ usuario.name }}</mat-list-item>
+      </mat-list>
+      <br />
+      <button mat-button style="background-color: #ff6633" (click)="regresar()">
+        Regresar
+      </button>
+    </div>
+  </div>
+</ng-template>
